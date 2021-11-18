@@ -25,7 +25,7 @@ fmod_editor.log
 
 #>>> Manual selection
 
-# Removes editor cache
+# Removes client generated workfolder files
 fmodWorkspace01/.cache
 fmodWorkspace01/Build
 fmodWorkspace01/Profiler
