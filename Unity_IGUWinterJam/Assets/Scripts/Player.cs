@@ -17,25 +17,32 @@ public class Player : MonoBehaviour
     Vector3 moveDirection;
     Vector3 gravity;
 
+    public bool isGrounded;
+
     void Update()
     {
         Move((Vector3)GameManager.InputManager.movementInput);
+        isGrounded = IsGrounded();
     }
 
     private void FixedUpdate()
     {
-        //gravity += Vector3.up * Physics.gravity.y * fallSpeed * Time.fixedDeltaTime;
+        gravity += Vector3.up * Physics.gravity.y * fallSpeed * Time.fixedDeltaTime;
         rb.velocity = (moveDirection * movementSpeed) + gravity;
 
-        //if (senses.IsGrounded() && rb.velocity.y <= 0)
-        //{
-        //    gravity = Vector3.zero;
-        //    //TODO Set to floor
-        //}
+        if (IsGrounded() && rb.velocity.y <= 0)
+        {
+            gravity = Vector3.zero;
+            //TODO Set to floor
+        }
     }
 
+    bool IsGrounded() 
+    {
+        return Physics.Raycast(transform.position + Vector3.up*0.5f, Vector3.down, 1.55f);
+    }
 
-    public void Move(Vector3 inputDirection)
+public void Move(Vector3 inputDirection)
     {
         // base movement on camera
         Vector3 correctedVertical = inputDirection.x * Camera.main.transform.right;
