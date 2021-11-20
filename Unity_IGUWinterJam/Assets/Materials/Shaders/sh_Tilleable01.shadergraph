@@ -191,6 +191,9 @@
         },
         {
             "m_Id": "d013345cc820495cacc1b34d454c443a"
+        },
+        {
+            "m_Id": "7f3acb1b94ff4c8a9f73cd8dbb9547f6"
         }
     ],
     "m_GroupDatas": [
@@ -680,6 +683,20 @@
                     "m_Id": "07e0c4d2fbb84b5d94348aa38fa1dfce"
                 },
                 "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "7f3acb1b94ff4c8a9f73cd8dbb9547f6"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "202e0a6efea048319ae95e1f61228361"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -4342,6 +4359,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "7f3acb1b94ff4c8a9f73cd8dbb9547f6",
+    "m_Group": {
+        "m_Id": "cbd9a81ab6bb458faf9c66c1ab3a9d0e"
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -497.9999694824219,
+            "y": 1777.0,
+            "width": 144.00003051757813,
+            "height": 34.0001220703125
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "b10c706e57824686824b277c3b971764"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "1130e4fd66a74ad7b584252c26f78288"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "8018689ae490434681cf8909993c44e8",
     "m_Id": 0,
@@ -5267,6 +5319,20 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BooleanMaterialSlot",
+    "m_ObjectId": "b10c706e57824686824b277c3b971764",
+    "m_Id": 0,
+    "m_DisplayName": "Triplannar02",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": false,
+    "m_DefaultValue": false
 }
 
 {
