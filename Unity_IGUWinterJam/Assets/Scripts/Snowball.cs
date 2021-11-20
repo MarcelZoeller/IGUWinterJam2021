@@ -61,8 +61,5 @@ public class Snowball : MonoBehaviour
         transform.localScale = new Vector3(snowSize, snowSize, snowSize);
     }
 
-    private void OnDrawGizmos()
-    {
-        Handles.Label(transform.position, snowPoints.ToString());
-    }
+
 }
