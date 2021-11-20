@@ -14,17 +14,29 @@ public class Snowball : MonoBehaviour
 
     int snowPoints = 0;
 
-    [SerializeField] float snowSize = 1f;
+
+
+    [SerializeField] float snowStartSize = 0.5f;
+    [SerializeField] float snowSize = 0.5f;
+
+
+    private void Start()
+    {
+        snowSize = snowStartSize;
+        SetSnowSize();
+    }
 
     void Update()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 0.1f, Vector3.down*0.1f, 0.001f, snowLayerMask);
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 0.1f, Vector3.down, 2f, snowLayerMask);
 
         foreach (var hit in hits)
         {
             var snowfield = hit.collider.gameObject.GetComponent<SnowField>();
             if (snowfield != null)
+            {
                 CheckForSnow(snowfield);
+            }
         }
     }
 
@@ -33,8 +45,14 @@ public class Snowball : MonoBehaviour
         Vector2 where = snowField.GetPosition(transform);
         snowPoints += snowField.CheckForSnow(where.x, where.y, snowPickupRadius);
 
+        
+
+        snowSize = snowStartSize + (snowPoints / 100000f);
+
+        SetSnowSize();
+
         if (snowText != null)
-            snowText.text = "Snow: " + snowPoints.ToString();
+            snowText.text = "Snow: " + snowPoints.ToString() + " Snow Size: " + snowSize ;
     }
 
     [ContextMenu("Set Snow Size")]
