@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using TMPro;
 
 public class Snowball : MonoBehaviour
 {
     [SerializeField] LayerMask snowLayerMask;
     [SerializeField] int snowPickupRadius = 8;
 
+    [SerializeField] TextMeshProUGUI snowText;
+
     int snowPoints = 0;
+
+    [SerializeField] float snowSize = 1f;
 
     void Update()
     {
@@ -27,6 +32,15 @@ public class Snowball : MonoBehaviour
     {
         Vector2 where = snowField.GetPosition(transform);
         snowPoints += snowField.CheckForSnow(where.x, where.y, snowPickupRadius);
+
+        if (snowText != null)
+            snowText.text = "Snow: " + snowPoints.ToString();
+    }
+
+    [ContextMenu("Set Snow Size")]
+    void SetSnowSize()
+    {
+        transform.localScale = new Vector3(snowSize, snowSize, snowSize);
     }
 
     private void OnDrawGizmos()

@@ -134,7 +134,7 @@ Material:
     - _Tiling01: 0.36
     - _Tiling02: 0.35
     - _Triplannar01: 1
-    - _Triplannar02: 0
+    - _Triplannar02: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
