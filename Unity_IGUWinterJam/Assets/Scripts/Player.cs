@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     {
         Move((Vector3)GameManager.InputManager.movementInput);
         isGrounded = IsGrounded();
+
+
+        CheckForInteraction();
+
     }
 
     private void FixedUpdate()
@@ -36,6 +40,20 @@ public class Player : MonoBehaviour
             //TODO Set to floor
         }
     }
+
+
+
+    void CheckForInteraction()
+    {
+        if (GameManager.InputManager.interact)
+        {
+            GameManager.InputManager.interact = false;
+            Debug.Log("interact");
+        }
+    }
+
+
+
 
     bool IsGrounded() 
     {

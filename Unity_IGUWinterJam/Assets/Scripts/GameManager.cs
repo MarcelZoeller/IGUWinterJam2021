@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] InputManager inputManager;
     public static InputManager InputManager { get { return instance.inputManager; } }
 
+    [SerializeField] UI ui;
+    public static UI UI { get { return instance.ui; } }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -18,4 +21,10 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
     }
+
+    public void SnowBallDestroyed()
+    {
+
+    }
+
 }
