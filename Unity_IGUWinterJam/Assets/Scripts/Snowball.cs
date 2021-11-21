@@ -71,9 +71,14 @@ public class Snowball : MonoBehaviour
 
         if(snowSize < .3f)
         {
-            GameManager.instance.SnowBallDestroyed();
-            Destroy(gameObject);
+            DestroySnowBall();
         }
+    }
+
+    void DestroySnowBall()
+    {
+        Destroy(gameObject);
+        GameManager.instance.currentSnowBallSpawner.SpawnSnowball();
     }
     
     

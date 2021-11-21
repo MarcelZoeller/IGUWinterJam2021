@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] UI ui;
     public static UI UI { get { return instance.ui; } }
 
+
+    public SnowBallSpawner currentSnowBallSpawner;
+
     private void Awake()
     {
         if (instance != null && instance != this)
