@@ -14,7 +14,8 @@ public class Snowball : MonoBehaviour
 
     int snowPoints = 0;
 
-
+    public bool melt = false;
+    [SerializeField] int meltRate = 50;
 
     [SerializeField] float snowStartSize = 0.5f;
     [SerializeField] float snowSize = 0.5f;
@@ -23,7 +24,7 @@ public class Snowball : MonoBehaviour
     private void Start()
     {
         snowSize = snowStartSize;
-        SetSnowSize();
+        UpdateSnowSize();
     }
 
     void Update()
@@ -38,6 +39,12 @@ public class Snowball : MonoBehaviour
                 CheckForSnow(snowfield);
             }
         }
+
+        if (melt)
+        {
+            snowPoints -= meltRate;
+            UpdateSnowSize();
+        }
     }
 
     void CheckForSnow(SnowField snowField)
@@ -45,21 +52,31 @@ public class Snowball : MonoBehaviour
         Vector2 where = snowField.GetPosition(transform);
         snowPoints += snowField.CheckForSnow(where.x, where.y, snowPickupRadius);
 
-        
 
+        UpdateSnowSize();
+
+
+    }
+
+
+
+    void UpdateSnowSize()
+    {
         snowSize = snowStartSize + (snowPoints / 100000f);
 
-        SetSnowSize();
+        transform.localScale = new Vector3(snowSize, snowSize, snowSize);
 
         if (snowText != null)
-            snowText.text = "Snow: " + snowPoints.ToString() + " Snow Size: " + snowSize ;
-    }
+            snowText.text = "Snow: " + snowPoints.ToString() + " Snow Size: " + snowSize;
 
-    [ContextMenu("Set Snow Size")]
-    void SetSnowSize()
-    {
-        transform.localScale = new Vector3(snowSize, snowSize, snowSize);
+        if(snowSize < .3f)
+        {
+            GameManager.instance.SnowBallDestroyed();
+            Destroy(gameObject);
+        }
     }
+    
+    
 
 
 }
