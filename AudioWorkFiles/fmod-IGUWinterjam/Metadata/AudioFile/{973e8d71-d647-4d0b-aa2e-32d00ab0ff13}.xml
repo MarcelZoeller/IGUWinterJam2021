@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{e80c10d9-838b-46de-b474-f34283aa664b}">
+	<object class="AudioFile" id="{973e8d71-d647-4d0b-aa2e-32d00ab0ff13}">
 		<property name="assetPath">
-			<value>Snowball/SnowballBreaking.wav</value>
+			<value>Penguin/penguinSqueak_05.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>96</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.2615646258503401</value>
+			<value>0.19927083333333334</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>

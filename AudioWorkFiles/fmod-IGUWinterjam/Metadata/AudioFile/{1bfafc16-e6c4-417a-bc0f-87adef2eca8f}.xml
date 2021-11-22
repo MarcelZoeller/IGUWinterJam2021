@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{637cbc10-92a3-4640-bc5e-f4a570bc89a4}">
+	<object class="AudioFile" id="{1bfafc16-e6c4-417a-bc0f-87adef2eca8f}">
 		<property name="assetPath">
-			<value>Penguin/footsteps_ice_03.wav</value>
+			<value>Penguin/footsteps_snow_03.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
@@ -11,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.24165624999999999</value>
+			<value>0.31038541666666669</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
