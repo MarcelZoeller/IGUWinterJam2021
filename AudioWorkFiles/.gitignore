@@ -29,3 +29,7 @@ fmod_editor.log
 fmodWorkspace01/.cache
 fmodWorkspace01/Build
 fmodWorkspace01/Profiler
+
+fmod-IGUWinterjam/.cache
+!fmod-IGUWinterjam/Build
+fmod-IGUWinterjam/Profiler
