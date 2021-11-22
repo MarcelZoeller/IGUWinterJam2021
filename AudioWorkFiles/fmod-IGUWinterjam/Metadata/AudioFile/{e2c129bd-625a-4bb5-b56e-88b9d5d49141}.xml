@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e2c129bd-625a-4bb5-b56e-88b9d5d49141}">
 		<property name="assetPath">
-			<value>OneShots/snowballMelting.wav</value>
+			<value>Snowball/snowballMelting.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
