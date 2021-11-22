@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a894f863-77bc-4739-a15d-a555699ffff4}">
+	<object class="AudioFile" id="{9d915bf3-9a1e-46f9-a6b4-1e94c8fd0bcf}">
 		<property name="assetPath">
-			<value>song02.mp3</value>
+			<value>ambience/ambience_snow_softwind_01.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -14,10 +14,10 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>211.99199999999999</value>
+			<value>79.224000000000004</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{b99ba012-00f6-4dac-b42b-dadcd557980f}</destination>
+			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
 		</relationship>
 	</object>
 </objects>

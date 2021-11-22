@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a894f863-77bc-4739-a15d-a555699ffff4}">
+	<object class="AudioFile" id="{d27e21d7-f582-402a-b708-dd2e0bd26c7f}">
 		<property name="assetPath">
-			<value>song02.mp3</value>
+			<value>Emitter/campfire.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -14,10 +14,10 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>211.99199999999999</value>
+			<value>34.079999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{b99ba012-00f6-4dac-b42b-dadcd557980f}</destination>
+			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
 		</relationship>
 	</object>
 </objects>

@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a894f863-77bc-4739-a15d-a555699ffff4}">
+	<object class="AudioFile" id="{a691dd79-7f78-4319-8fb7-ae9f5af15d4e}">
 		<property name="assetPath">
-			<value>song02.mp3</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>Footsteps/snowball_rolling_02.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>211.99199999999999</value>
+			<value>2.2449886621315192</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{b99ba012-00f6-4dac-b42b-dadcd557980f}</destination>
+			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
 		</relationship>
 	</object>
 </objects>
