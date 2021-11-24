@@ -525,7 +525,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7781457, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -726,7 +726,19 @@ MonoBehaviour:
     m_ActionId: fdf39b25-54f6-4e9f-971c-f5ba1e406e89
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 516544558041408470}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: efb477e4-81a8-4129-aa2e-c4c11db064c3
     m_ActionName: Player/Interact[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -791,7 +803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 516544558041408470}
-  ui: {fileID: 0}
+  ui: {fileID: 1560690013}
+  currentSnowBallSpawner: {fileID: 0}
 --- !u!114 &516544558041408470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +829,6 @@ GameObject:
   m_Component:
   - component: {fileID: 516544558362342402}
   - component: {fileID: 516544558362342405}
-  - component: {fileID: 516544558362342404}
   - component: {fileID: 516544558362342400}
   - component: {fileID: 516544558362342403}
   m_Layer: 0
@@ -884,14 +896,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &516544558362342404
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516544558362342407}
-  m_Enabled: 1
 --- !u!114 &516544558362342400
 MonoBehaviour:
   m_ObjectHideFlags: 0

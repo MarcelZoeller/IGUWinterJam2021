@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{aa1638e8-8ea0-4842-a971-13e7a8761e27}">
+		<property name="assetPath">
+			<value>Music/PuzzleLoop/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
+		</relationship>
+	</object>
+</objects>

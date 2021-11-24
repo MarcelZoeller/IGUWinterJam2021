@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a2286450-cbbb-4713-b967-1c60de25a45e}">
+		<property name="assetPath">
+			<value>Music/PuzzleLoop_rhythmsection.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>48.06530612244898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
+		</relationship>
+	</object>
+</objects>
