@@ -6,16 +6,23 @@ using UnityEngine.InputSystem;
 
 public class DecorationManager : MonoBehaviour
 {
-
+    // Misc Variables
     public List<GameObject> help1;
+    public Camera m_mainCam;
 
-    // Start is called before the first frame update
+    // Decoration Process
+    public bool snowBallSelected;
+    public bool placing;
+    public GameObject selectedObject;
+    public GameObject selectedSnowball;
+    Vector3 v_previousPosition = Vector3.zero;
+
+
     void Start()
     {
-        
+        m_mainCam = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Debugging Function to start DecorationScene
@@ -25,11 +32,13 @@ public class DecorationManager : MonoBehaviour
             foreach (GameObject snowB in help1)
             {
                 DontDestroyOnLoad(snowB);
+                snowB.GetComponent<Rigidbody>().isKinematic = true;
             }
             DontDestroyOnLoad(this.gameObject);
             SceneManager.LoadScene("DecorationScene");
         }
 
+        // Stack Snowballs according to their size to form a snow man
         if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
             if (SceneManager.GetActiveScene().name == "DecorationScene")
@@ -49,22 +58,50 @@ public class DecorationManager : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.lKey.wasPressedThisFrame)
+        // Logic of placing objects and stopping the placing process
+        if (placing && selectedSnowball && selectedObject)
         {
-            if (SceneManager.GetActiveScene().name == "DecorationScene")
+            if (Mouse.current.leftButton.wasPressedThisFrame)
             {
-                for (int j = 0; j < help1.Count; j++)
+                selectedObject = null;
+                selectedSnowball = null;
+                snowBallSelected = false;
+                placing = false;
+            }
+            positionObjectToPlace(selectedObject, selectedSnowball);
+        }
+
+        // Debugging with mouse position
+        if ( Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            if (snowBallSelected)
+            {
+                selectedObject = chooseObject();
+                if (selectedObject == null)
                 {
-                    help1[j].transform.localScale = Vector3.one * 1.2f;
+                    if (startDecoration() != null)
+                    {
+                        selectedSnowball = startDecoration();
+                    }
                 }
             }
+            else if (!placing)
+            {
+                selectedSnowball = startDecoration();
+            }
+
+            if (placing && !selectedObject && !selectedSnowball)
+            {
+                placing = false;
+            }
+        }
+
+        if (!placing && selectedSnowball)
+        {
+            rotateCamAroundObject(selectedSnowball, 10f);
         }
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        
-    }
 
     // Fetches all Snowballs from the scene that should not be destroyed
     // In: Number of snowballs that should be saved
@@ -81,5 +118,82 @@ public class DecorationManager : MonoBehaviour
         return snowBalls;
     }
 
+    // Start the decoration mode for a single snowball of the snowman
+    // In:  /
+    // Out: GameObject of decorated snowball
+    GameObject startDecoration()
+    {
+        GameObject t_targetedSnowBall = null;
+        
+        Ray t_ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit t_rayHit;
+        if(Physics.Raycast(t_ray, out t_rayHit))
+        {
+            t_targetedSnowBall = t_rayHit.collider.gameObject;
+            snowBallSelected = true;
+        }
+        return t_targetedSnowBall;
+    }
+
+    // Choose a Object to place on the currently selected snowball
+    // In:  /
+    // Out: Object that has been placed
+    GameObject chooseObject()
+    {
+        GameObject g_object = null;
+
+        Ray t_ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit t_rayHit;
+        if (Physics.Raycast(t_ray, out t_rayHit))
+        {
+            if (t_rayHit.transform.CompareTag("DecoObj"))
+            {
+                g_object = t_rayHit.transform.gameObject;
+                placing = true;
+            }
+        }
+        return g_object;
+    }
+
+    // Place object on a snowball relative to mouseposition
+    // In:  snowball to place, gameobject to place the snowball on
+    // Out: /
+    void positionObjectToPlace(GameObject objectToPlace, GameObject objectToPlaceOn)
+    {
+        float f_radius = selectedSnowball.GetComponent<SphereCollider>().bounds.size.x;
+        Vector3 v_posWithDepth = Camera.main.ScreenToWorldPoint(new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 5f));
+        Vector3 v_mouseToRadius = (v_posWithDepth - objectToPlace.transform.position).normalized;
+
+        print(v_posWithDepth);
+        objectToPlace.transform.position = objectToPlaceOn.transform.position + f_radius * v_mouseToRadius;
+
+    }
+
+    void rotateCamAroundObject(GameObject selectedObject, float distanceToTarget)
+    {
+        Vector3 v_mousePos = new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 5f);
+        Camera cam = Camera.main;
+        if (Mouse.current.middleButton.wasPressedThisFrame)
+        {
+            v_previousPosition = cam.ScreenToViewportPoint(v_mousePos);
+        }
+        else if (Mouse.current.middleButton.isPressed)
+        {
+            Vector3 newPosition = cam.ScreenToViewportPoint(v_mousePos);
+            Vector3 direction = v_previousPosition - newPosition;
+
+            float rotationAroundYAxis = -direction.x * 180; // camera moves horizontally
+            float rotationAroundXAxis = direction.y * 180; // camera moves vertically
+
+            cam.transform.position = selectedObject.transform.position;
+
+            cam.transform.Rotate(new Vector3(1, 0, 0), rotationAroundXAxis);
+            cam.transform.Rotate(new Vector3(0, 1, 0), rotationAroundYAxis, Space.World); // <— This is what makes it work!
+
+            cam.transform.Translate(new Vector3(0, 0, -distanceToTarget));
+
+            v_previousPosition = newPosition;
+        }
+    }
 
 }
