@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{aa1744e7-e614-4781-ad0e-912e8e6350f6}">
+		<property name="assetPath">
+			<value>WaterStream.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35.112000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3bf32ba6-8076-4ba0-8c03-61d4ca396194}</destination>
+		</relationship>
+	</object>
+</objects>
