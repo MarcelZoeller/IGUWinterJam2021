@@ -97,7 +97,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{3666fdf2-8fba-4487-a4d6-90f32ac28e95}">
 		<property name="volume">
-			<value>-1</value>
+			<value>-2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{25c3e6b4-5080-4b88-a2b3-3d6ed18f2b6d}</destination>
@@ -127,9 +127,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{6c8e5b02-1e55-49d2-a1c3-f3c079361c10}">
-		<property name="volume">
-			<value>-20</value>
-		</property>
 		<property name="name">
 			<value>Rhythm</value>
 		</property>

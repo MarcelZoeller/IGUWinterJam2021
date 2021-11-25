@@ -454,6 +454,7 @@
 		<relationship name="effects">
 			<destination>{da977422-0b33-4c7b-b73d-0d9a2fcf83b1}</destination>
 			<destination>{512993b9-bf58-40bd-9a67-5e6bc4c91fbd}</destination>
+			<destination>{599b9b29-6d5a-49ec-9ae2-d40ab117e44d}</destination>
 			<destination>{cb04d948-6b66-448e-b8a5-fe0b4175c80e}</destination>
 		</relationship>
 	</object>
@@ -509,6 +510,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{a7bb1783-27eb-4355-8c92-b558ddd82a4e}">
 		<relationship name="effects">
+			<destination>{6024b6c0-3dfb-4d33-b229-b081d96979ba}</destination>
 			<destination>{907c9a13-d8d3-430b-932a-95a54b607e84}</destination>
 		</relationship>
 	</object>
@@ -569,6 +571,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{2e15f003-5656-478d-be78-3b4ac1b48f61}">
 		<relationship name="effects">
+			<destination>{bc101e9a-5dfb-4280-ba92-78b5fd1e8865}</destination>
 			<destination>{e5db85a6-1ee4-46e7-a9b6-39233668e7ce}</destination>
 		</relationship>
 	</object>
@@ -707,7 +710,12 @@
 	</object>
 	<object class="GainEffect" id="{512993b9-bf58-40bd-9a67-5e6bc4c91fbd}">
 		<property name="gain">
-			<value>5.5</value>
+			<value>10</value>
+		</property>
+	</object>
+	<object class="GainEffect" id="{599b9b29-6d5a-49ec-9ae2-d40ab117e44d}">
+		<property name="gain">
+			<value>5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{cb04d948-6b66-448e-b8a5-fe0b4175c80e}" />
@@ -721,6 +729,11 @@
 			<destination>{41551bc9-fadc-4e1e-ab65-d472accbc55c}</destination>
 		</relationship>
 	</object>
+	<object class="GainEffect" id="{6024b6c0-3dfb-4d33-b229-b081d96979ba}">
+		<property name="gain">
+			<value>6</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{907c9a13-d8d3-430b-932a-95a54b607e84}" />
 	<object class="AutomationCurve" id="{62fad610-8578-48f1-9175-2160d2ae527a}">
 		<relationship name="parameter">
@@ -731,6 +744,11 @@
 			<destination>{7d34dc3e-222e-4ddc-8a7d-520ec7278a8a}</destination>
 			<destination>{53ba4124-ac76-4ea1-94af-a0b947c32127}</destination>
 		</relationship>
+	</object>
+	<object class="GainEffect" id="{bc101e9a-5dfb-4280-ba92-78b5fd1e8865}">
+		<property name="gain">
+			<value>8</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{e5db85a6-1ee4-46e7-a9b6-39233668e7ce}" />
 	<object class="AutomationCurve" id="{9a1ea898-4bbf-4d8e-bf9b-b672f087e286}">
@@ -745,13 +763,13 @@
 	<object class="MixerBusFader" id="{f4464b47-e94e-4e96-9345-2c92bc27174a}" />
 	<object class="GainEffect" id="{a197a48d-3ad0-479d-ba0d-fb767d75404e}">
 		<property name="gain">
-			<value>-10</value>
+			<value>-12</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{8a853bd4-e391-4bd4-94a3-42bae6e53265}" />
 	<object class="GainEffect" id="{dfbb1a0f-2557-4d1b-a6e8-7988d942ad3d}">
 		<property name="gain">
-			<value>-5</value>
+			<value>-8</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{8fdecebb-6dbd-4ec3-a8c2-63558741bfd7}" />
