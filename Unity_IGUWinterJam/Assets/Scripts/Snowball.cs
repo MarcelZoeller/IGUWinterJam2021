@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using TMPro;
+using FMODUnity;
 
 public class Snowball : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Snowball : MonoBehaviour
     [SerializeField] float snowStartSize = 0.5f;
     [SerializeField] float snowSize = 0.5f;
 
+    [SerializeField] StudioEventEmitter StudioEventEmitter;
+    [SerializeField] Rigidbody rb;
+    [SerializeField] FMOD.Studio.EventInstance instance;
+    [SerializeField] float magnitude;
 
     private void Start()
     {
@@ -45,7 +50,28 @@ public class Snowball : MonoBehaviour
             snowPoints -= meltRate;
             UpdateSnowSize();
         }
+
+        magnitude = rb.velocity.magnitude;
+
+        if (rb.velocity.magnitude > 1)
+        {
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/Snowball/SnowballRolling");
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            instance.start();
+        }
+        else
+        {
+            //instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            instance.release();
+        }
+
     }
+
+    
+
+
+
 
     void CheckForSnow(SnowField snowField)
     {

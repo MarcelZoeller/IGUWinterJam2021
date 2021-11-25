@@ -168,8 +168,8 @@ public class Player : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * inputAmount * rotateSpeed);
                 transform.rotation = targetRotation;
             }
-        
+
         // handle animation blendtree for walking
-        //anim.SetFloat("moveSpeed", inputAmount, 0.2f, Time.deltaTime);
+        animator.SetFloat("moveSpeed", inputMagnitude, 0.2f, Time.deltaTime);
     }
 }
