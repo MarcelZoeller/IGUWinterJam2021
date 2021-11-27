@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/RobertScene.unity
+    guid: ebf50b38fa74be34fa1d750f75f48704
+  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: ef76256a466197142beb60a384a76187
   m_configObjects: {}

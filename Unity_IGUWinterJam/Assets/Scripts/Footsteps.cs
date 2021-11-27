@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Footsteps : MonoBehaviour
 {
+    [SerializeField] float footParameter = 1f;
+    
     //void PlayFootstepEvent(string path)
     //{
     //    FMOD.Studio.EventInstance Footsteps = FMODUnity.RuntimeManager.CreateInstance(path);
@@ -15,6 +17,7 @@ public class Footsteps : MonoBehaviour
     void PlayFootstepEvent()
     {
         FMOD.Studio.EventInstance Footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Footsteps/Footsteps");
+        Footsteps.setParameterByName("FeetSurface", footParameter);
         Footsteps.start();
         Footsteps.release();
     }
