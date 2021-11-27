@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class SnowField : MonoBehaviour
 {
-    [SerializeField] MeshRenderer meshRender;
-    [SerializeField] Material material;
-    [SerializeField] Texture2D orginalTexture;
-    
-    [SerializeField] Texture2D copiedTexture;
-    [SerializeField] Color transparentColor;
+    MeshRenderer meshRender;
+    Material material;
+    Texture2D orginalTexture;
 
-   public int textureWidth;
-    public int textureHeight;
+    Texture2D copiedTexture;
+    Color transparentColor;
+
+    int textureWidth;
+    int textureHeight;
 
     private void Awake()
     {

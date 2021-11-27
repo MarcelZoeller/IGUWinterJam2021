@@ -5442,25 +5442,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6715022856981619198, guid: 08c92e2717deb1e44961e394ff52ddc1, type: 3}
   m_PrefabInstance: {fileID: 852856825}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &882341151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1425937046167028261, guid: ec2d9b2f26dfa7348ba1d0a32e53b782, type: 3}
-  m_PrefabInstance: {fileID: 1937490210}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &882341153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882341151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5663fe0ddce38a41a1480b2bf4ea35c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snowBallPrefab: {fileID: 6117087720591645899, guid: f8cf1f4c068427848b353db631b516c2, type: 3}
-  spawnPoint: {fileID: 908919413}
 --- !u!1 &887459586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 29e4b00da9ebfb14bbfeed050acf2b5a, type: 3}
@@ -5545,11 +5526,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cf1f4c068427848b353db631b516c2, type: 3}
---- !u!4 &908919413 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5963160184698422042, guid: ec2d9b2f26dfa7348ba1d0a32e53b782, type: 3}
-  m_PrefabInstance: {fileID: 1937490210}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &911401057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 29e4b00da9ebfb14bbfeed050acf2b5a, type: 3}
@@ -13246,10 +13222,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1387266443}
     m_Modifications:
-    - target: {fileID: 935045275290247480, guid: ec2d9b2f26dfa7348ba1d0a32e53b782, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1425937046167028261, guid: ec2d9b2f26dfa7348ba1d0a32e53b782, type: 3}
       propertyPath: m_Name
       value: SpawnZone
@@ -13296,10 +13268,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3730090733456314894, guid: ec2d9b2f26dfa7348ba1d0a32e53b782, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104770339719131971, guid: ec2d9b2f26dfa7348ba1d0a32e53b782, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
