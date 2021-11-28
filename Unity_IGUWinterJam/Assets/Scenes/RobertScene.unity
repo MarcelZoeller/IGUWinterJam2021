@@ -9839,7 +9839,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 705182368}
   ui: {fileID: 0}
+  decorationManager: {fileID: 0}
   currentSnowBallSpawner: {fileID: 0}
+  currentGoalZone: {fileID: 0}
 --- !u!114 &705182370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10348,6 +10350,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2576140876857227838, guid: e2d6e5a3e7797964ea0a14690dd4fa3e, type: 3}
+      propertyPath: _ActionOnDisable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5881544438623210579, guid: e2d6e5a3e7797964ea0a14690dd4fa3e, type: 3}
       propertyPath: m_Name
       value: LevelCampfire
@@ -10430,6 +10436,7 @@ GameObject:
   - component: {fileID: 1481395852}
   - component: {fileID: 1481395851}
   - component: {fileID: 1481395850}
+  - component: {fileID: 1481395853}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -10552,6 +10559,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481395848}
   m_CullTransparentMesh: 1
+--- !u!223 &1481395853
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481395848}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1487315155
 GameObject:
   m_ObjectHideFlags: 0

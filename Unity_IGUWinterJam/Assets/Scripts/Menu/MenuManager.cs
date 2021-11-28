@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,12 +38,17 @@ public class MenuManager : MonoBehaviour
         SetStateSettings(MenuState.LevelSelection);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+        EditorApplication.ExitPlaymode();
+        Debug.Log("quit");
+    }
+
     private void ToggleMenu()
     {
         if (!menuActive)
         {
-            
-            
             menuActive = true;
         }
         else

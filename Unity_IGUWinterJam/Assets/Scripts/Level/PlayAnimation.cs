@@ -20,11 +20,18 @@ public sealed class PlayAnimation : MonoBehaviour
 
         // If the animation was already playing, it will continue from the current time.
         // So to force it to play from the beginning you can just reset the Time:
-        animancer.Play(clip1).Time = 0;
+        PlayAnim(animancer, clip1);
     }
 
     public void PlayExitAnim()
     {
-        animancer.Play(clip2).Time = 0;
+        PlayAnim(animancer, clip2);
+        Debug.Log("got it");
+    }
+
+    void PlayAnim(AnimancerComponent animancerTemp, AnimationClip clip)
+    {
+        var state = animancerTemp.Play(clip);
+        state.Time = 0;
     }
 }

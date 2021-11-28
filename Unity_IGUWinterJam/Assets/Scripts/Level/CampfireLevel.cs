@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,7 +43,7 @@ public class CampfireLevel : MonoBehaviour
 
     private void Update()
     {
-        if (canEnterLevel && GameManager.InputManager.interact)
+        if (activated && canEnterLevel && GameManager.InputManager.interact)
         {
             GameManager.InputManager.interact = false;
             SceneManager.LoadScene(levelIndex);
