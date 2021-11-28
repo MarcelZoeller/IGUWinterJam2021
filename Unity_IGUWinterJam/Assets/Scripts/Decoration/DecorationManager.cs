@@ -14,6 +14,7 @@ public class DecorationManager : MonoBehaviour
     bool debuggingFunctions = false;                     // Bool to switch debugging functionalities on and off
     bool snowBallSelected;                               // Bool showing if a snowball is currently selected (currently redudant)
     bool placing;                                        // Bool showing if the player is currently placing an object onto the selected snowball
+    bool decorationStarted = false;
    
     GameObject selectedObject;                           // The object the player has selected to place. Null if no object is selected 
     GameObject selectedSnowball;                         // The snowball the player has selected to place objects on. Null if no snowball is selected 
@@ -149,7 +150,7 @@ public class DecorationManager : MonoBehaviour
         }
 
         // Enable the player to rotate the cam around the middle snowball with the middle mouse wheel
-        if (!placing)
+        if (decorationStarted && !placing)
         {
             rotateCamAroundObject(snowballs[1], 15f);
         }
@@ -160,6 +161,9 @@ public class DecorationManager : MonoBehaviour
     // Out: /
     public void enterDecorationScene(List<GameObject> sB = null)
     {
+        snowballs = sB;
+
+        decorationStarted = true;
         if (sB == null)
         {
             sB = GetSnowBalls(3);
@@ -167,7 +171,7 @@ public class DecorationManager : MonoBehaviour
         foreach (GameObject snowB in sB)
         {
             DontDestroyOnLoad(snowB);
-            snowB.GetComponent<Rigidbody>().isKinematic = true;
+            //snowB.GetComponent<Rigidbody>().isKinematic = true;
             snowB.GetComponent<Snowball>().decorate = true;
         }
         DontDestroyOnLoad(this.gameObject);
