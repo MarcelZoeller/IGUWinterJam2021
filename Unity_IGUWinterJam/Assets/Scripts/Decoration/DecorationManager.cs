@@ -14,12 +14,12 @@ public class DecorationManager : MonoBehaviour
     bool debuggingFunctions = false;                     // Bool to switch debugging functionalities on and off
     bool snowBallSelected;                               // Bool showing if a snowball is currently selected (currently redudant)
     bool placing;                                        // Bool showing if the player is currently placing an object onto the selected snowball
-    bool decorationStarted = false;
+    bool decorationStarted = false;                      // Bool enabling the whole decoration mangager
    
-    GameObject selectedObject;                           // The object the player has selected to place. Null if no object is selected 
-    GameObject selectedSnowball;                         // The snowball the player has selected to place objects on. Null if no snowball is selected 
-    List<GameObject> placedObjects;                      // List with all GameObjects already placed
-    List<GameObject> snowballs;                          // List of all Snowballs imported in the scene
+    public GameObject selectedObject;                           // The object the player has selected to place. Null if no object is selected 
+    public GameObject selectedSnowball;                         // The snowball the player has selected to place objects on. Null if no snowball is selected 
+    public List<GameObject> placedObjects;                      // List with all GameObjects already placed
+    public List<GameObject> snowballs;                          // List of all Snowballs imported in the scene
 
     int resWidth;                                        // Width of current resolution
     int resHeight;                                       // Height of current resolution  
@@ -33,28 +33,38 @@ public class DecorationManager : MonoBehaviour
     // Use Awake instead of Start to call earlier then start of snowBalls (resetting size if bool decorate in Snowballs is not set true)
     private void Awake()
     {
+        SceneManager.sceneLoaded += this.OnLoadCallback;
+    }
+
+    void OnLoadCallback(Scene scene, LoadSceneMode sceneMode)
+    {
+        DontDestroyOnLoad(this);
         m_mainCam = Camera.main;
         resWidth = Screen.currentResolution.width;
         resHeight = Screen.currentResolution.height;
 
 
         // Remove later only for testing 
-        snowballs = GetSnowBalls(3);
-        foreach (GameObject snowB in snowballs)
+        if (debuggingFunctions)
         {
-            DontDestroyOnLoad(snowB);
-            snowB.GetComponent<Rigidbody>().isKinematic = true;
-            snowB.GetComponent<Snowball>().decorate = true;
+            snowballs = GetSnowBalls(3);
+            foreach (GameObject snowB in snowballs)
+            {
+                DontDestroyOnLoad(snowB);
+                snowB.GetComponent<Rigidbody>().isKinematic = true;
+                snowB.GetComponent<Snowball>().decorate = true;
+            }
         }
         // =====================================
 
+        Debug.Log("SSSSSSSSSS");
         // Place retrieved snowballs in the Decorationscene on top of each other according to the size
         if (SceneManager.GetActiveScene().name == "DecorationScene")
         {
             for (int j = 0; j < snowballs.Count; j++)
             {
                 float sizesAdded = 0.0f;
-                for (int k = 0; k < j+1; k++)
+                for (int k = 0; k < j + 1; k++)
                 {
                     if (k == j)
                     {
@@ -64,10 +74,10 @@ public class DecorationManager : MonoBehaviour
                     {
                         sizesAdded += snowballs[k].GetComponent<SphereCollider>().bounds.size.x;
                     }
-                    
+
                 }
                 snowballs[j].transform.position = new Vector3(0, sizesAdded, 5);
-                snowballs[j].GetComponent<Rigidbody>().isKinematic = true;
+                //snowballs[j].GetComponent<Rigidbody>().isKinematic = true;
             }
         }
     }

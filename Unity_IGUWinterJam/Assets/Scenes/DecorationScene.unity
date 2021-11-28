@@ -352,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &620011872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,17 +365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538f670092e16f642863c9836430b7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  help1: []
-  m_mainCam: {fileID: 0}
-  snowBallSelected: 0
-  placing: 0
   selectedObject: {fileID: 0}
   selectedSnowball: {fileID: 0}
-  resWidth: 0
-  resHeight: 0
   placedObjects: []
-  placingPosition: {x: 0, y: 0, z: 0}
-  v_offSet: {x: 0, y: 0, z: 0}
+  snowballs: []
 --- !u!4 &620011873
 Transform:
   m_ObjectHideFlags: 0
