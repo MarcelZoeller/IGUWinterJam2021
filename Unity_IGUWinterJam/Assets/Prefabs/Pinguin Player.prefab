@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2480706124454834519}
-  m_LocalRotation: {x: -0.047398977, y: 0.23508202, z: -0.0006622927, w: 0.970819}
-  m_LocalPosition: {x: 0.197, y: 1.4677, z: 0.379}
-  m_LocalScale: {x: 0.06887439, y: 0.06887439, z: 0.06887438}
+  m_LocalRotation: {x: -0.047398873, y: 0.23508206, z: -0.00066225353, w: 0.9708189}
+  m_LocalPosition: {x: 0.15117545, y: 0.3158548, z: 0.28625518}
+  m_LocalScale: {x: 0.057845067, y: 0.057845075, z: 0.05784507}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8529881421353805115}
+  m_Father: {fileID: 5234185241073506388}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -5.263, y: 27.286, z: -1.356}
 --- !u!212 &3911027740765426196
@@ -108,12 +108,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5280087050221258443}
-  m_LocalRotation: {x: -0.04182557, y: -0.23613425, z: -0.022315657, w: 0.9705634}
-  m_LocalPosition: {x: -0.179, y: 1.4677, z: 0.386}
-  m_LocalScale: {x: 0.06887438, y: 0.06887438, z: 0.06887438}
+  m_LocalRotation: {x: -0.041825466, y: -0.23613413, z: -0.022315698, w: 0.9705634}
+  m_LocalPosition: {x: -0.16461313, y: 0.31585473, z: 0.29213414}
+  m_LocalScale: {x: 0.057845056, y: 0.05784508, z: 0.05784506}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8529881421353805115}
+  m_Father: {fileID: 5234185241073506388}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -5.263, y: -27.286, z: -1.356}
 --- !u!212 &1759584466048299815
@@ -206,8 +206,6 @@ Transform:
   m_Children:
   - {fileID: 8529881421882156005}
   - {fileID: 93418820521082419}
-  - {fileID: 1067229700055170053}
-  - {fileID: 8307599148199722023}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -339,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84cb96c77a50d43bfd9746418b2ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footParameter: 1
 --- !u!95 &7906599231841242699
 Animator:
   serializedVersion: 4
@@ -645,5 +644,10 @@ PrefabInstance:
 --- !u!4 &93418820521082419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6d730ff616d8c54bb1d5f06a722ba79, type: 3}
+  m_PrefabInstance: {fileID: 486769815206484440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5234185241073506388 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5648311283939049868, guid: a6d730ff616d8c54bb1d5f06a722ba79, type: 3}
   m_PrefabInstance: {fileID: 486769815206484440}
   m_PrefabAsset: {fileID: 0}
