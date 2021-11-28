@@ -57,7 +57,6 @@ public class DecorationManager : MonoBehaviour
         }
         // =====================================
 
-        Debug.Log("SSSSSSSSSS");
         // Place retrieved snowballs in the Decorationscene on top of each other according to the size
         if (SceneManager.GetActiveScene().name == "DecorationScene")
         {
@@ -68,11 +67,11 @@ public class DecorationManager : MonoBehaviour
                 {
                     if (k == j)
                     {
-                        sizesAdded += snowballs[k].GetComponent<SphereCollider>().bounds.size.x / 2;
+                        sizesAdded += (snowballs[k].GetComponent<SphereCollider>().bounds.size.x / 2) * 0.8f;
                     }
                     else
                     {
-                        sizesAdded += snowballs[k].GetComponent<SphereCollider>().bounds.size.x;
+                        sizesAdded += snowballs[k].GetComponent<SphereCollider>().bounds.size.x * 0.8f;
                     }
 
                 }
@@ -150,7 +149,12 @@ public class DecorationManager : MonoBehaviour
             }
             if (!placing)
             {
+                GameObject savedSnowBall = selectedSnowball;
                 selectedSnowball = startDecoration();
+                if (selectedSnowball == null)
+                {
+                    selectedSnowball = savedSnowBall;
+                }
             }
 
             if (placing && !selectedObject)
