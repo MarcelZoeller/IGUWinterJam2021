@@ -26,14 +26,22 @@ public class Snowball : MonoBehaviour
     [SerializeField] FMOD.Studio.EventInstance instance;
     [SerializeField] float magnitude;
     [SerializeField] float snowGrowSpeed = 100000f;
+
+    public bool decorate = false;
+
     private void Start()
     {
-        snowSize = snowStartSize;
-        UpdateSnowSize();
+        if (!decorate)
+        {
+            snowSize = snowStartSize;
+            UpdateSnowSize();
+        }
     }
 
     void Update()
     {
+        if (decorate) return;
+
         RaycastHit[] hits = Physics.SphereCastAll(transform.position + Vector3.up, 0.1f, Vector3.down, 20f, snowLayerMask);
 
         foreach (var hit in hits)
