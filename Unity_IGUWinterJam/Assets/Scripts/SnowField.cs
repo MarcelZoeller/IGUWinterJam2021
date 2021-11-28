@@ -16,6 +16,8 @@ public class SnowField : MonoBehaviour
     int textureWidth;
     int textureHeight;
 
+    [SerializeField] bool invertAxis = false;
+
     private void Awake()
     {
         GetVariables();
@@ -66,8 +68,16 @@ public class SnowField : MonoBehaviour
 
         //x2 = Mathf.Abs(x2 - 1); 
 
-        return new Vector2(x2,z2);
-        
+        if (!invertAxis)
+            return new Vector2(x2,z2);
+        else
+        {
+            float x3 = Math.Abs(x2 - textureWidth);
+            float z3 = Math.Abs(z2 - textureWidth);
+
+            return new Vector2(z3, x3);
+        }
+
     }
 
 

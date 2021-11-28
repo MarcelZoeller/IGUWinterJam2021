@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/JanaTest.unity
+    guid: 035ead1d5041f4d43a1787b86dfc7357
+  - enabled: 1
     path: Assets/Scenes/RobertScene.unity
     guid: ebf50b38fa74be34fa1d750f75f48704
   - enabled: 1
