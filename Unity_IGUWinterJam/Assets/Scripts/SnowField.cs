@@ -6,15 +6,17 @@ using UnityEngine;
 
 public class SnowField : MonoBehaviour
 {
-    [SerializeField] MeshRenderer meshRender;
-    [SerializeField] Material material;
-    [SerializeField] Texture2D orginalTexture;
-    
-    [SerializeField] Texture2D copiedTexture;
-    [SerializeField] Color transparentColor;
+    MeshRenderer meshRender;
+    Material material;
+    Texture2D orginalTexture;
 
-   public int textureWidth;
-    public int textureHeight;
+    Texture2D copiedTexture;
+    Color transparentColor;
+
+    int textureWidth;
+    int textureHeight;
+
+    [SerializeField] bool invertAxis = false;
 
     private void Awake()
     {
@@ -66,8 +68,16 @@ public class SnowField : MonoBehaviour
 
         //x2 = Mathf.Abs(x2 - 1); 
 
-        return new Vector2(x2,z2);
-        
+        if (!invertAxis)
+            return new Vector2(x2,z2);
+        else
+        {
+            float x3 = Math.Abs(x2 - textureWidth);
+            float z3 = Math.Abs(z2 - textureWidth);
+
+            return new Vector2(z3, x3);
+        }
+
     }
 
 

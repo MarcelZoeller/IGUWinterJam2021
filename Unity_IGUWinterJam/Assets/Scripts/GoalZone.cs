@@ -13,7 +13,7 @@ public class GoalZone : MonoBehaviour
     [SerializeField] bool hasBall2;
     [SerializeField] bool hasBall3;
 
-    
+    List<GameObject> snowBalls = new List<GameObject>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +22,8 @@ public class GoalZone : MonoBehaviour
         var snowball = other.gameObject.GetComponent<Snowball>();
         if (snowball)
         {
+            snowBalls.Add(snowball.gameObject);
+
             if (hasBall1 && hasBall2 && hasBall3) return;
 
             Destroy(snowball.GetComponent<Rigidbody>());
@@ -32,6 +34,7 @@ public class GoalZone : MonoBehaviour
             {
                 targetPosition = ballCenter1.position;
                 hasBall1 = true;
+                
             }
             else if (!hasBall2)
             {
@@ -42,12 +45,15 @@ public class GoalZone : MonoBehaviour
             {
                 targetPosition = ballCenter3.position;
                 hasBall3 = true;
+                
             }
 
             StartCoroutine(MoveAtSpeedCoroutine(snowball.transform, targetPosition, .1f));
 
+            if (hasBall3)
+                StartCoroutine(StartDecorationMode());
 
-            Destroy(snowball);
+            //Destroy(snowball);
         }
 
 
@@ -63,6 +69,14 @@ public class GoalZone : MonoBehaviour
 
 
     }
+
+    IEnumerator StartDecorationMode()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("GoalZone enter deco mode");
+        GameManager.DecorationManager.enterDecorationScene(snowBalls);
+    }
+
 
     private void OnTriggerExit(Collider other)
     {

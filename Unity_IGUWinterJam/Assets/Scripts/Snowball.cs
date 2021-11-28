@@ -13,7 +13,7 @@ public class Snowball : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI snowText;
 
-    int snowPoints = 0;
+    [SerializeField] int snowPoints = 0;
 
     public bool melt = false;
     [SerializeField] int meltRate = 50;
@@ -25,16 +25,26 @@ public class Snowball : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] FMOD.Studio.EventInstance instance;
     [SerializeField] float magnitude;
+    [SerializeField] float snowGrowSpeed = 100000f;
+
+    public bool decorate = false;
 
     private void Start()
     {
-        snowSize = snowStartSize;
-        UpdateSnowSize();
+        if (!decorate)
+        {
+            snowSize = snowStartSize;
+            UpdateSnowSize();
+        }
     }
 
     void Update()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 0.1f, Vector3.down, 2f, snowLayerMask);
+        if (decorate) return;
+
+        if (rb == null) return;
+
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position + Vector3.up, 0.1f, Vector3.down, 20f, snowLayerMask);
 
         foreach (var hit in hits)
         {
@@ -85,10 +95,10 @@ public class Snowball : MonoBehaviour
     }
 
 
-
+    
     void UpdateSnowSize()
     {
-        snowSize = snowStartSize + (snowPoints / 100000f);
+        snowSize = snowStartSize + (snowPoints / snowGrowSpeed);
 
         transform.localScale = new Vector3(snowSize, snowSize, snowSize);
 

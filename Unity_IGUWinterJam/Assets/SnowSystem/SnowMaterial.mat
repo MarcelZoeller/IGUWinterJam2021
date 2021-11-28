@@ -45,7 +45,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SnowScale: -0.24
-    - _SnowStrength: 0.02
+    - _SnowStrength: 0.03
     - _Snow_Noise: 21.1
     - _Snow_Noise_Height: 0
     - _Snow_Power: -0.03

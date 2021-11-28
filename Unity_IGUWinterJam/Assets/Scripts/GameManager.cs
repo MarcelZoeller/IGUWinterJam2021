@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] UI ui;
     public static UI UI { get { return instance.ui; } }
 
+    [SerializeField] DecorationManager decorationManager;
+    public static DecorationManager DecorationManager { get { return instance.decorationManager; } }
 
     public SnowBallSpawner currentSnowBallSpawner;
+
+    public GoalZone currentGoalZone;
 
     private void Awake()
     {
@@ -27,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void SnowBallDestroyed()
     {
-
+        
     }
 
 }
