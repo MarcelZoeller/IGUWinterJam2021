@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -9747,7 +9747,19 @@ MonoBehaviour:
     m_ActionId: fdf39b25-54f6-4e9f-971c-f5ba1e406e89
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 705182368}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: efb477e4-81a8-4129-aa2e-c4c11db064c3
     m_ActionName: Player/Interact[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -9827,7 +9839,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 705182368}
   ui: {fileID: 0}
+  decorationManager: {fileID: 0}
   currentSnowBallSpawner: {fileID: 0}
+  currentGoalZone: {fileID: 0}
 --- !u!114 &705182370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10400,6 +10414,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 669945808}
+    - target: {fileID: 8729135243431702852, guid: e2d6e5a3e7797964ea0a14690dd4fa3e, type: 3}
+      propertyPath: levelIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2d6e5a3e7797964ea0a14690dd4fa3e, type: 3}
 --- !u!1 &1481395848
