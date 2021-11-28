@@ -42,6 +42,8 @@ public class Snowball : MonoBehaviour
     {
         if (decorate) return;
 
+        if (rb == null) return;
+
         RaycastHit[] hits = Physics.SphereCastAll(transform.position + Vector3.up, 0.1f, Vector3.down, 20f, snowLayerMask);
 
         foreach (var hit in hits)
