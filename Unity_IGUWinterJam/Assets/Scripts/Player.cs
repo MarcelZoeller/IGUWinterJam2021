@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -42,9 +43,12 @@ public class Player : MonoBehaviour
         gravity += Vector3.up * Physics.gravity.y * fallSpeed * Time.fixedDeltaTime;
         rb.velocity = (moveDirection * movementSpeed) + gravity;
 
-        if (GameManager.MenuManager.menuState == 0)
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        
+        if (GetComponent<MenuManager>() != null)
+        {
+            if (GameManager.MenuManager.menuState == 0)
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        }
+
         if (IsGrounded() && rb.velocity.y <= 0)
         {
             gravity = Vector3.zero;
@@ -163,8 +167,10 @@ public class Player : MonoBehaviour
         float inputMagnitude = Mathf.Abs(inputDirection.x) + Mathf.Abs(inputDirection.y);
         var inputAmount = Mathf.Clamp01(inputMagnitude);
 
-        if (GameManager.MenuManager.menuState == 0) return;
-            // rotate player to movement direction
+        if (GetComponent<MenuManager>() != null)
+            if (GameManager.MenuManager.menuState == 0) return;
+            
+        // rotate player to movement direction
             if (moveDirection != Vector3.zero)
             {
                 Quaternion rot = Quaternion.LookRotation(moveDirection);
