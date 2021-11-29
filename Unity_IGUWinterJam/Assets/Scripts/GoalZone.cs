@@ -147,7 +147,7 @@ public class GoalZone : MonoBehaviour
                         PlayStickSound();
                     }
 
-                    if (item.decoG == PickUpDeco.deco.branch2 && !branch1B)
+                    if (item.decoG == PickUpDeco.deco.branch2 && !branch2B)
                     {
                         branch2.SetActive(true);
                         branch1B = true;
