@@ -31,6 +31,7 @@ public class DecorationManager : MonoBehaviour
 
     //Pickup handling
     public List<GameObject> pickedObjects;
+    public List<PickUpDeco> pickedUp;
 
 
     // Use Awake instead of Start to call earlier then start of snowBalls (resetting size if bool decorate in Snowballs is not set true)

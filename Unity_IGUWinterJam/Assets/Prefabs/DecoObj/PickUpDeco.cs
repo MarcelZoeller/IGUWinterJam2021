@@ -5,32 +5,44 @@ using UnityEngine;
 public class PickUpDeco : MonoBehaviour
 {
     bool pickedup;
-    DecorationManager decoM;
-
-    // Start is called before the first frame update
-    void Start()
+    public deco decoG;
+    public enum deco
     {
-        decoM = GameObject.Find("DecoManager").GetComponent<DecorationManager>();
+        hat, 
+        carrot, 
+        eye1,
+        eye2,
+        button1, 
+        button2, 
+        button3, 
+        branch1,
+        branch2,
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.GetComponent<Player>() != null && pickedup == false)
         {
-            if (!pickedup)
-            {
-                this.transform.parent = null;
-                decoM.pickedObjects.Add(this.gameObject);
-                pickedup = true;
-                DontDestroyOnLoad(this);
-                
-            }
+
+            this.transform.parent = null;
+            GameManager.DecorationManager.pickedObjects.Add(this.gameObject);
+            GameManager.DecorationManager.pickedUp.Add(this);
+            pickedup = true;
+            transform.position = new Vector3(9999, 9999, 999);
+            PlaySound();
+
+
+
         }
+    }
+
+
+    void PlaySound()
+    {
+        FMOD.Studio.EventInstance Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpCarrot");
+        Sound.start();
+        Sound.release();
     }
 }

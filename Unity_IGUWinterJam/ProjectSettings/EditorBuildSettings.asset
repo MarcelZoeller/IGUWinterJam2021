@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start_Scene.unity
-    guid: a7d6768c01d520542ab9117528727b1e
-  - enabled: 1
-    path: Assets/Scenes/JanaTest.unity
-    guid: 035ead1d5041f4d43a1787b86dfc7357
-  - enabled: 1
-    path: "Assets/Scenes/Linn\xE9atest2.unity"
-    guid: ef271d4df5266344d81052bda4437af6
-  - enabled: 1
-    path: Assets/Scenes/DecorationScene.unity
-    guid: be84ef2115e7a2841a047f5297f0b630
+    path: Assets/Scenes/Level_1.unity
+    guid: bd690a4a485202b4c832a1f132f5deda
   m_configObjects: {}

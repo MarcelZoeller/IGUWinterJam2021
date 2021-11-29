@@ -15,6 +15,19 @@ public class GoalZone : MonoBehaviour
 
     List<GameObject> snowBalls = new List<GameObject>();
 
+    [SerializeField] GameObject hat;
+    [SerializeField] GameObject carrot;
+    [SerializeField] GameObject eye1;
+    [SerializeField] GameObject eye2;
+    [SerializeField] GameObject button1;
+    [SerializeField] GameObject button2;
+    [SerializeField] GameObject button3;
+    [SerializeField] GameObject branch1;
+    [SerializeField] GameObject branch2;
+
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         
@@ -50,8 +63,8 @@ public class GoalZone : MonoBehaviour
 
             StartCoroutine(MoveAtSpeedCoroutine(snowball.transform, targetPosition, .1f));
 
-            if (hasBall3)
-                StartCoroutine(StartDecorationMode());
+            //if (hasBall3)
+            //    StartCoroutine(StartDecorationMode());
 
             //Destroy(snowball);
         }
@@ -60,10 +73,43 @@ public class GoalZone : MonoBehaviour
         var player = other.gameObject.GetComponent<Player>();
         if(player != null)
         {
-            if(hasBall1 && hasBall2 && hasBall3)
+            if (hasBall1 && hasBall2 && hasBall3)
             {
-                GameManager.UI.interactText.gameObject.SetActive(true);
+
+
+
+                foreach (var item in GameManager.DecorationManager.pickedUp)
+                {
+                    if (item.decoG == PickUpDeco.deco.hat)
+                        hat.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.carrot)
+                        carrot.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.eye1)
+                        eye1.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.eye2)
+                        eye2.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.button1)
+                        button1.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.button2)
+                        button2.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.button3)
+                        button3.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.branch1)
+                        branch1.SetActive(true);
+
+                    if (item.decoG == PickUpDeco.deco.branch2)
+                        branch2.SetActive(true);
+
+                }
             }
+
         }
 
 
@@ -73,8 +119,8 @@ public class GoalZone : MonoBehaviour
     IEnumerator StartDecorationMode()
     {
         yield return new WaitForSeconds(2f);
-        Debug.Log("GoalZone enter deco mode");
-        GameManager.DecorationManager.enterDecorationScene(snowBalls);
+        //Debug.Log("GoalZone enter deco mode");
+        //GameManager.DecorationManager.enterDecorationScene(snowBalls);
     }
 
 

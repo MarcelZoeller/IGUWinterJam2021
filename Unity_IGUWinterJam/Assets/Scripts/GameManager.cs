@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
 
-        inputManager = GetComponent<InputManager>();
+        //inputManager = GetComponent<InputManager>();
         menuManager = GetComponent<MenuManager>();
     }
 
