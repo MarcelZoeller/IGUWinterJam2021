@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/JanaTest.unity
     guid: 035ead1d5041f4d43a1787b86dfc7357
   - enabled: 1
+    path: "Assets/Scenes/Linn\xE9atest2.unity"
+    guid: ef271d4df5266344d81052bda4437af6
+  - enabled: 1
     path: Assets/Scenes/DecorationScene.unity
     guid: be84ef2115e7a2841a047f5297f0b630
   m_configObjects: {}

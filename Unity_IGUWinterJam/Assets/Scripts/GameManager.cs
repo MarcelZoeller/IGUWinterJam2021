@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    InputManager inputManager;
+    [SerializeField] InputManager inputManager;
     public static InputManager InputManager { get { return instance.inputManager; } }
 
     [SerializeField] UI ui;

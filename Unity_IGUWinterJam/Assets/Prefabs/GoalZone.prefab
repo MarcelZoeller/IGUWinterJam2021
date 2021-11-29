@@ -84,6 +84,9 @@ MonoBehaviour:
   ballCenter1: {fileID: 1386081181017494381}
   ballCenter2: {fileID: 6251772602029805056}
   ballCenter3: {fileID: 62891233576091819}
+  hasBall1: 0
+  hasBall2: 0
+  hasBall3: 0
 --- !u!136 &229682468029511998
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -142,7 +145,7 @@ GameObject:
   - component: {fileID: 4331551182185120302}
   m_Layer: 0
   m_Name: Zone
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
