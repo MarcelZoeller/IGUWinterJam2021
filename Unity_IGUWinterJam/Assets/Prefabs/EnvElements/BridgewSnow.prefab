@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8891894327447637968}
   - component: {fileID: 6666081225566010138}
   - component: {fileID: 5423240153875457948}
+  - component: {fileID: 1536159107618952465}
   m_Layer: 0
   m_Name: BridgewSnow
   m_TagString: Untagged
@@ -12459,6 +12460,20 @@ MonoBehaviour:
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 674340280032488212, guid: e0f148b414b87b24bbec8055362bb2b7, type: 3}
   m_Mode: 0
+--- !u!64 &1536159107618952465
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152771076428438223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &5423240153099057747
 PrefabInstance:
   m_ObjectHideFlags: 0
