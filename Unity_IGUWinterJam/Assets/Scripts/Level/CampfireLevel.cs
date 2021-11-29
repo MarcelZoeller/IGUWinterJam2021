@@ -20,7 +20,7 @@ public class CampfireLevel : MonoBehaviour
 
     private PlayAnimation anim;
 
-    bool canEnterLevel = false;
+    [SerializeField] bool canEnterLevel = false;
     
     private void Start()
     {

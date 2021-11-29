@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] DecorationManager decorationManager;
     public static DecorationManager DecorationManager { get { return instance.decorationManager; } }
 
+    MenuManager menuManager;
+    
+    public static MenuManager MenuManager { get { return instance.menuManager; } }
+    
     public SnowBallSpawner currentSnowBallSpawner;
 
     public GoalZone currentGoalZone;
@@ -27,6 +31,9 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        //inputManager = GetComponent<InputManager>();
+        menuManager = GetComponent<MenuManager>();
     }
 
     public void SnowBallDestroyed()

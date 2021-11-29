@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    private static MenuManager instance;
+    
     [SerializeField] private List<Button> buttons;
     [SerializeField] [Required] private Animator animator;
 
@@ -15,12 +17,19 @@ public class MenuManager : MonoBehaviour
 
     private Player player;
     
-    private enum MenuState
+    public enum MenuState
     {
         MainMenu,
         LevelSelection
     };
-
+    
+    public MenuState menuState = MenuState.MainMenu;
+    
+    void Awake()
+    {
+        instance = this;
+    }
+    
     private void Start()
     {
         player = FindObjectOfType<Player>();
@@ -29,8 +38,6 @@ public class MenuManager : MonoBehaviour
 
         SetStateSettings(MenuState.MainMenu);
     }
-
-    [SerializeField] private MenuState menuState = MenuState.MainMenu;
 
     public void StartGame()
     {
@@ -41,7 +48,7 @@ public class MenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        EditorApplication.ExitPlaymode();
+        //EditorApplication.ExitPlaymode();
         Debug.Log("quit");
     }
 
@@ -71,11 +78,11 @@ public class MenuManager : MonoBehaviour
                 
                 // TODO Penguins feet are clipping through the ground
                 
-                player.gameObject.GetComponent<Player>().enabled = false;
+                //player.gameObject.GetComponent<Player>().enabled = false;
                 animator.Play("MainMenuCamera");
                 break;
             case MenuState.LevelSelection:
-                player.gameObject.GetComponent<Player>().enabled = true;
+                //player.gameObject.GetComponent<Player>().enabled = true;
                 animator.Play("LevelSelectorCamera");
                 break;
         }
