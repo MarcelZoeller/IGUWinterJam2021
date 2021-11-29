@@ -14741,8 +14741,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035, y: 412}
-  m_SizeDelta: {x: 1389.1, y: 50}
+  m_AnchoredPosition: {x: 0.000061035, y: 488}
+  m_SizeDelta: {x: 1406.29, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731270702
 MonoBehaviour:
@@ -14773,8 +14773,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294918912
+  m_fontColor: {r: 0, g: 0.26106858, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14797,7 +14797,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -19098,6 +19098,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -37.691364
       objectReference: {fileID: 0}
+    - target: {fileID: 516544558362342405, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 516544558362342405, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 516544558362342405, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 516544558362342405, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 516544558362342405, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6520576784225225729, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -21282,6 +21302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 859486691}
     m_Modifications:
+    - target: {fileID: 1536159107618952465, guid: cff3bf52b45c41741babaf7745422de8, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5152771076428438223, guid: cff3bf52b45c41741babaf7745422de8, type: 3}
       propertyPath: m_Name
       value: BridgewSnow
@@ -21452,6 +21476,10 @@ PrefabInstance:
       propertyPath: button3
       value: 
       objectReference: {fileID: 303926731}
+    - target: {fileID: 1428439336, guid: b64604d32cb3c5142bdb72a34573d85d, type: 3}
+      propertyPath: ThankYouForPlaying
+      value: 
+      objectReference: {fileID: 731270700}
     - target: {fileID: 229682468029511998, guid: b64604d32cb3c5142bdb72a34573d85d, type: 3}
       propertyPath: m_Radius
       value: 1.55
@@ -24054,6 +24082,11 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 899425492, guid: 93880e07632166a4097041476bbf6ef1, type: 3}
   m_PrefabInstance: {fileID: 835164794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201114114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5152771076428438223, guid: cff3bf52b45c41741babaf7745422de8, type: 3}
+  m_PrefabInstance: {fileID: 932845140}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1301107617
 PrefabInstance:
@@ -26851,6 +26884,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5533095809775353973, guid: cff3bf52b45c41741babaf7745422de8, type: 3}
   m_PrefabInstance: {fileID: 932845140}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1613909924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201114114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.600202, y: 2.2556615, z: 3.6525927}
+  m_Center: {x: 3.2766387, y: -0.99, z: 0.052999496}
 --- !u!1001 &1619296549
 PrefabInstance:
   m_ObjectHideFlags: 0

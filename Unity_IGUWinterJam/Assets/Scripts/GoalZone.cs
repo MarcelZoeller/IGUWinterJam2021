@@ -25,6 +25,8 @@ public class GoalZone : MonoBehaviour
     [SerializeField] GameObject branch1;
     [SerializeField] GameObject branch2;
 
+    [SerializeField] GameObject ThankYouForPlaying;
+
      bool hatB = false;
     bool carrotB = false;
      bool eye1B = false;
@@ -153,6 +155,9 @@ public class GoalZone : MonoBehaviour
                     }
 
                 }
+
+                if (hatB && carrotB && eye1B && eye2B && button1B && button2B && button3B && branch1B && branch2B)
+                    ThankYouForPlaying.SetActive(true);
             }
 
         }
