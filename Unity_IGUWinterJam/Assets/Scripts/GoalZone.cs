@@ -25,6 +25,15 @@ public class GoalZone : MonoBehaviour
     [SerializeField] GameObject branch1;
     [SerializeField] GameObject branch2;
 
+     bool hatB = false;
+    bool carrotB = false;
+     bool eye1B = false;
+     bool eye2B = false;
+    bool button1B = false;
+     bool button2B = false;
+    bool button3B = false;
+     bool branch1B = false;
+     bool branch2B = false;
 
 
 
@@ -80,32 +89,68 @@ public class GoalZone : MonoBehaviour
 
                 foreach (var item in GameManager.DecorationManager.pickedUp)
                 {
-                    if (item.decoG == PickUpDeco.deco.hat)
+                    if (item.decoG == PickUpDeco.deco.hat && !hatB)
+                    {
                         hat.SetActive(true);
+                        hatB = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.carrot)
+                    if (item.decoG == PickUpDeco.deco.carrot && !carrotB)
+                    {
                         carrot.SetActive(true);
+                        carrotB = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.eye1)
+                    if (item.decoG == PickUpDeco.deco.eye1 && !eye1B)
+                    {
                         eye1.SetActive(true);
+                        eye1B = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.eye2)
+                    if (item.decoG == PickUpDeco.deco.eye2 && !eye2B)
+                    {
                         eye2.SetActive(true);
+                        eye2B = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.button1)
+                    if (item.decoG == PickUpDeco.deco.button1 && !button1B)
+                    {
                         button1.SetActive(true);
+                        button1B = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.button2)
+                    if (item.decoG == PickUpDeco.deco.button2 && !button2B)
+                    {
                         button2.SetActive(true);
+                        button2B = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.button3)
+                    if (item.decoG == PickUpDeco.deco.button3 && !button3B)
+                    {
                         button3.SetActive(true);
+                        button3B = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.branch1)
+                    if (item.decoG == PickUpDeco.deco.branch1 && !branch1B)
+                    {
                         branch1.SetActive(true);
+                        branch1B = true;
+                        PlayStickSound();
+                    }
 
-                    if (item.decoG == PickUpDeco.deco.branch2)
+                    if (item.decoG == PickUpDeco.deco.branch2 && !branch1B)
+                    {
                         branch2.SetActive(true);
+                        branch1B = true;
+                        PlayStickSound();
+                    }
 
                 }
             }
@@ -115,6 +160,16 @@ public class GoalZone : MonoBehaviour
 
 
     }
+
+    void PlayStickSound()
+    {
+
+        FMOD.Studio.EventInstance Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/StickToSnowman");
+        Sound.start();
+        Sound.release();
+    }
+
+    
 
     IEnumerator StartDecorationMode()
     {
