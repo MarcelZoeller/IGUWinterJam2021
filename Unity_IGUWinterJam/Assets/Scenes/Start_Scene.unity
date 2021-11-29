@@ -9271,6 +9271,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8529881421353805119, guid: eefb098dc0a08f4409c388c3613c915a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eefb098dc0a08f4409c388c3613c915a, type: 3}
 --- !u!4 &322446805 stripped
@@ -9918,7 +9922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911ed06fd1554194f887a575fd9a475f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 705182368}
   ui: {fileID: 0}
   decorationManager: {fileID: 0}
   currentSnowBallSpawner: {fileID: 0}
@@ -9951,6 +9954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 1481395850}
+  - {fileID: 1098847049}
   animator: {fileID: 99994990}
   menuState: 0
 --- !u!1 &705507993
