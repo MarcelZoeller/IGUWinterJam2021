@@ -16,10 +16,10 @@ public class DecorationManager : MonoBehaviour
     bool placing;                                        // Bool showing if the player is currently placing an object onto the selected snowball
     bool decorationStarted = false;                      // Bool enabling the whole decoration mangager
    
-    public GameObject selectedObject;                           // The object the player has selected to place. Null if no object is selected 
-    public GameObject selectedSnowball;                         // The snowball the player has selected to place objects on. Null if no snowball is selected 
-    public List<GameObject> placedObjects;                      // List with all GameObjects already placed
-    public List<GameObject> snowballs;                          // List of all Snowballs imported in the scene
+    public GameObject selectedObject;                    // The object the player has selected to place. Null if no object is selected 
+    public GameObject selectedSnowball;                  // The snowball the player has selected to place objects on. Null if no snowball is selected 
+    public List<GameObject> placedObjects;               // List with all GameObjects already placed
+    public List<GameObject> snowballs;                   // List of all Snowballs imported in the scene
 
     int resWidth;                                        // Width of current resolution
     int resHeight;                                       // Height of current resolution  
@@ -28,6 +28,9 @@ public class DecorationManager : MonoBehaviour
     Vector3 placingPosition;                             // Storing the position where the last object has been placed
     Vector3 v_offSet;                                    // Handling the offset between a already placed object and the mouse (currently not working) 
 
+
+    //Pickup handling
+    public List<GameObject> pickedObjects;
 
 
     // Use Awake instead of Start to call earlier then start of snowBalls (resetting size if bool decorate in Snowballs is not set true)
@@ -42,7 +45,6 @@ public class DecorationManager : MonoBehaviour
         m_mainCam = Camera.main;
         resWidth = Screen.currentResolution.width;
         resHeight = Screen.currentResolution.height;
-
 
         // Remove later only for testing 
         if (debuggingFunctions)
@@ -78,6 +80,11 @@ public class DecorationManager : MonoBehaviour
                 snowballs[j].transform.position = new Vector3(0, sizesAdded, 5);
                 //snowballs[j].GetComponent<Rigidbody>().isKinematic = true;
             }
+        }
+        // Clear List of picked up objects in any scene but decoration
+        else
+        {
+            pickedObjects = new List<GameObject>();
         }
     }
 
@@ -168,6 +175,14 @@ public class DecorationManager : MonoBehaviour
         {
             rotateCamAroundObject(snowballs[1], 15f);
         }
+
+        // Call for pickup object positioning
+        if (SceneManager.GetActiveScene().name == "DecorationScene")
+        {
+            positionPickUps();
+        }
+       
+        
     }
 
     // Start decoration scene and load in snowballs. Either through giving the function a list with snowballs or having the objects named after the convention: "Snowball (X)" where X are numbers from 1-3
@@ -261,7 +276,8 @@ public class DecorationManager : MonoBehaviour
         }
 
         Vector3 v_newPosition = Vector3.zero;
-        Vector3 extents = objectToPlace.GetComponent<Collider>().bounds.extents;
+        Vector3 extents2 = objectToPlace.GetComponent<Collider>().bounds.extents;
+        Vector3 extents = objectToPlace.transform.GetChild(0).GetComponent<MeshRenderer>().bounds.extents;
         extents.x *= objectToPlace.transform.localScale.x;
         extents.y *= objectToPlace.transform.localScale.y;
         extents.z *= objectToPlace.transform.localScale.z;
@@ -277,7 +293,12 @@ public class DecorationManager : MonoBehaviour
 
         v_newPosition = new Vector3(v_newPosition.x, v_newPosition.y, v_newPosition.z);
         objectToPlace.transform.position = v_newPosition;
-        objectToPlace.transform.rotation = Quaternion.LookRotation(v_mouseToRadius); 
+        Quaternion h = new Quaternion(v_mouseToRadius.x, v_mouseToRadius.y, v_mouseToRadius.z + 90, 0);
+        //objectToPlace.transform.rotation = Quaternion.LookRotation(objectToPlaceOn);
+        // objectToPlace.transform.rotation = new Quaternion(objectToPlace.transform.rotation.x, objectToPlace.transform.rotation.y, objectToPlace.transform.rotation.z - 180, 0);
+        Vector3 ssio = objectToPlaceOn.transform.position - objectToPlace.transform.position;
+        //objectToPlace.transform.LookAt(objectToPlaceOn.transform);
+        objectToPlace.transform.rotation = Quaternion.LookRotation(ssio);
         if (!placedObjects.Contains(objectToPlace))
         {
             placedObjects.Add(objectToPlace);
@@ -311,6 +332,26 @@ public class DecorationManager : MonoBehaviour
             cam.transform.Translate(new Vector3(0, 0, -distanceToTarget));
 
             v_previousPosition = newPosition;
+        }
+    }
+
+    void positionPickUps()
+    {
+        int i = 0;
+        foreach (GameObject p in pickedObjects)
+        {
+            if (!placedObjects.Contains(p))
+            {
+                float x = Screen.width * (0.6f + (i % 5 * 0.1f));
+                float y = Screen.height * (0.95f - (i * 0.2f));
+                p.transform.LookAt(Camera.main.transform);
+                Debug.Log((Screen.width, Screen.height));
+                Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(x, y, 5));
+                p.transform.position = pos;
+
+                i++;
+            }
+
         }
     }
 
