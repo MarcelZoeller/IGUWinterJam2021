@@ -21448,6 +21448,14 @@ PrefabInstance:
       propertyPath: button3
       value: 
       objectReference: {fileID: 303926731}
+    - target: {fileID: 229682468029511998, guid: b64604d32cb3c5142bdb72a34573d85d, type: 3}
+      propertyPath: m_Radius
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 229682468029511998, guid: b64604d32cb3c5142bdb72a34573d85d, type: 3}
+      propertyPath: m_Center.y
+      value: 0.87
+      objectReference: {fileID: 0}
     - target: {fileID: 2271920419642886852, guid: b64604d32cb3c5142bdb72a34573d85d, type: 3}
       propertyPath: m_Name
       value: GoalZone

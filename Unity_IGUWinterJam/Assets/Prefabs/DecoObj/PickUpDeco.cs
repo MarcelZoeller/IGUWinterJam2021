@@ -41,7 +41,32 @@ public class PickUpDeco : MonoBehaviour
 
     void PlaySound()
     {
-        FMOD.Studio.EventInstance Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpCarrot");
+        FMOD.Studio.EventInstance Sound;
+        Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpCarrot");
+        switch (decoG)
+        {
+            case deco.hat:
+                Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpCarrot");
+                break;
+            case deco.carrot:
+                Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpCarrot");
+                break;
+            case deco.eye1:
+            case deco.eye2:
+                Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpPine");
+                break;
+            case deco.button1:
+            case deco.button2:
+            case deco.button3:
+                Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpStone");
+                break;
+            case deco.branch1:
+            case deco.branch2:
+                Sound = FMODUnity.RuntimeManager.CreateInstance("event:/Decoration/PickUpTwig");
+                break;
+            default:
+                break;
+        }
         Sound.start();
         Sound.release();
     }
